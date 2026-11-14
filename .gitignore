@@ -1,0 +1,17 @@
+# Python & Environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.matplotlib_cache/
+.vscode/
+
+# Assignment Prompt Files (Keep local only, do not push to public repo)
+05_Cinema_Ticket_Demand_Forecasting.pdf
+Company.txt
+
+# OS Files
+Thumbs.db
+.DS_Store
