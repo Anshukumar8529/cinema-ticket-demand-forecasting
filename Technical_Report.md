@@ -22,6 +22,10 @@ Modern cinema multiplex operations face significant revenue and resource optimiz
 * **Prediction Horizon:** **T-24h to T-48h** (predictions are generated at 06:00 AM on the day prior to the scheduled show to give operations teams sufficient lead time to adjust screen schedules and labor shifts).
 * **Point-in-Time Constraint:** At inference time $T$, the model has access only to historical data strictly prior to $T$. Future sales and same-day target values are strictly unavailable.
 
+### 1.3 Live Cloud Deployment
+* **Interactive Web Application:** [https://cinema-ticket-demand-forecasting.streamlit.app/](https://cinema-ticket-demand-forecasting.streamlit.app/)
+* Evaluators and operations managers can interactively simulate demand forecasts, test cold-start variance buffers, and view real-time staffing and screen allocation recommendations directly in their web browser.
+
 ---
 
 ## 2. Dataset Sourcing & Synthetic Generation Methodology
@@ -229,7 +233,7 @@ The submission package directly fulfills all 5 mandatory Acceptance Tests detail
 
 1. **Reproduce Dataset Split & Training Run:** Executing `python model_training.py` trains all 4 models, prints chronological split cutoffs, and displays the full benchmark comparison table.
 2. **Show Baseline & Candidate Metrics on Held-Out Test Set:** Evaluated on June 3 - June 29 test set: Baseline (WAPE: 26.29%), Ridge (WAPE: 20.64%), Random Forest (WAPE: 17.46%), Gradient Boosting (WAPE: 14.82%).
-3. **Submit Real Prediction Through API/App:** `python predict.py` and Streamlit (`streamlit run app.py`) dynamically load `cinema_model_artifacts.pkl` and output real model predictions with uncertainty bounds.
+3. **Submit Real Prediction Through API/App:** `python predict.py` and the Streamlit web app ([Live Demo](https://cinema-ticket-demand-forecasting.streamlit.app/) / local `streamlit run app.py`) dynamically load `cinema_model_artifacts.pkl` and output real model predictions with uncertainty bounds.
 4. **Explain Prediction, Influential Inputs & Limitations:** The CLI and web app surface the top 4 local drivers, global feature importances, cold-start warnings, and 80% confidence intervals.
 5. **Demonstrate No Future Leakage or Sensitive Data:** Verified via automated unit tests in `tests/test_pipeline.py` (`7 passed in 5.36s`) and programmatic leakage checks in `eda_analysis.py`.
 

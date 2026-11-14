@@ -1,10 +1,15 @@
 # 🎬 Cinema Ticket Demand Forecasting System
 ### Algions AI Labs Private Limited — AI & Machine Learning Advanced Project Assessment
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cinema-ticket-demand-forecasting.streamlit.app/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![Tests Passing](https://img.shields.io/badge/tests-7%20passed-brightgreen.svg)]()
 [![Model](https://img.shields.io/badge/Best%20Model-Gradient%20Boosting%20Regressor-orange.svg)]()
 [![WAPE](https://img.shields.io/badge/Test%20WAPE-14.82%25-success.svg)]()
+
+> 🌐 **Live Deployed Web Application (Recruiter & Evaluator Demo):**  
+> 👉 **[https://cinema-ticket-demand-forecasting.streamlit.app/](https://cinema-ticket-demand-forecasting.streamlit.app/)**  
+> *Click above to explore live interactive show demand forecasts, 80% prediction intervals, feature impact breakdowns, and operational staffing & auditorium allocation recommendations directly in your browser without local setup.*
 
 ---
 
@@ -97,6 +102,11 @@ python predict.py --genre Action --show_time Evening --day_of_week Saturday --ca
 ```
 
 ### 7. Launch Interactive Streamlit Dashboard
+
+* **Live Cloud Deployment (Recommended for Instant Review):**  
+  👉 **[https://cinema-ticket-demand-forecasting.streamlit.app/](https://cinema-ticket-demand-forecasting.streamlit.app/)**
+
+* **Run Locally:**
 ```bash
 streamlit run app.py
 ```
@@ -109,7 +119,7 @@ streamlit run app.py
 | :---: | :--- | :--- | :---: |
 | **1** | Reproduce dataset split and training run from README | Run `python model_training.py` — reproduces chronological cutoffs and exact metrics | **PASS** |
 | **2** | Show baseline and candidate model metrics on held-out test set | Baseline (26.29% WAPE) vs GBR (14.82% WAPE) printed on 324-show held-out test set | **PASS** |
-| **3** | Submit real prediction through API/App loading saved model | `python predict.py` loads `cinema_model_artifacts.pkl` and outputs real predictions | **PASS** |
+| **3** | Submit real prediction through API/App loading saved model | `python predict.py` and [Live Streamlit App](https://cinema-ticket-demand-forecasting.streamlit.app/) dynamically load `cinema_model_artifacts.pkl` and output real predictions | **PASS** |
 | **4** | Explain prediction, most influential inputs & uncertainty | Output displays top feature importances, 80% confidence interval, and local drivers | **PASS** |
 | **5** | Demonstrate no future/target leakage or sensitive data | Programmatic leakage tests pass in `tests/test_pipeline.py`; zero PII collected | **PASS** |
 
